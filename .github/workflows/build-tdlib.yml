@@ -72,21 +72,21 @@ jobs:
           cd td/example
           ./export.sh
 
-      - name: fake build
-        run: |
-          mkdir -p td/example/libs
-          mkdir -p td/example/libs/arm64-v8a
-          mkdir -p td/example/libs/armeabi-v7a
-          mkdir -p td/example/libs/x86
-          mkdir -p td/example/libs/x86_64
-          echo arm64-v8a > td/example/libs/arm64-v8a/libtdjsonandroid.so
-          echo arm64-v8a > td/example/libs/arm64-v8a/libtdjsonandroid.so.debug
-          echo armeabi-v7a > td/example/libs/armeabi-v7a/libtdjsonandroid.so
-          echo armeabi-v7a > td/example/libs/armeabi-v7a/libtdjsonandroid.so.debug
-          echo x86 > td/example/libs/x86/libtdjsonandroid.so
-          echo x86 > td/example/libs/x86/libtdjsonandroid.so.debug
-          echo x86_64 > td/example/libs/x86_64/libtdjsonandroid.so
-          echo x86_64 > td/example/libs/x86_64/libtdjsonandroid.so.debug
+#      - name: fake build
+#        run: |
+#          mkdir -p td/example/libs
+#          mkdir -p td/example/libs/arm64-v8a
+#          mkdir -p td/example/libs/armeabi-v7a
+#          mkdir -p td/example/libs/x86
+#          mkdir -p td/example/libs/x86_64
+#          echo arm64-v8a > td/example/libs/arm64-v8a/libtdjsonandroid.so
+#          echo arm64-v8a > td/example/libs/arm64-v8a/libtdjsonandroid.so.debug
+#          echo armeabi-v7a > td/example/libs/armeabi-v7a/libtdjsonandroid.so
+#          echo armeabi-v7a > td/example/libs/armeabi-v7a/libtdjsonandroid.so.debug
+#          echo x86 > td/example/libs/x86/libtdjsonandroid.so
+#          echo x86 > td/example/libs/x86/libtdjsonandroid.so.debug
+#          echo x86_64 > td/example/libs/x86_64/libtdjsonandroid.so
+#          echo x86_64 > td/example/libs/x86_64/libtdjsonandroid.so.debug
 
       - name: zip
         run: |
@@ -341,4 +341,3 @@ jobs:
           body: https://github.com/tdlib/td/tree/${{ env.td_commit_hash }}
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: 'td/tdlib/bin/dlls.zip'
-
